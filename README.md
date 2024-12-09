@@ -18,3 +18,8 @@ Der Ausgang der Geschichte hängt von den Entscheidungen der Spielenden ab. Das 
 Erweiterbarkeit:
 optional: Es können visuelle Effekte und grafische Elemente eingebaut werden, um das Spielerlebnis aufzuwerten. (colorama oder pyfiglet.)
           Nach erspielen des Schiffs, könnte die Reise weitergehen und weitere Level erkundet werden.
+
+
+
+# Elfenspiel - Rayen Ezzine & Dorentina Krasniqi
+
