@@ -3,6 +3,7 @@ Piratenspiel oder Elfenspiel – erlebe fesselnde Geschichten und spannende Hera
 
 # Piratenspiel - Melanie Radosevic & Dominik Artner
 Piraten-Abenteuer (Artner & Radosevic)
+
 Ein textbasiertes Entscheidungs- und Rollenspiel, das durch einfache Mechaniken und eine spannende Geschichte überzeugt. 
 Spielende übernehmen die Rolle eines Pirat*innenkapitäns auf der Suche nach einem legendären Schatz.
 
