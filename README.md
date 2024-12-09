@@ -5,10 +5,12 @@ Piratenspiel oder Elfenspiel – erlebe fesselnde Geschichten und spannende Hera
 Piraten-Abenteuer (Artner & Radosevic)
 Ein textbasiertes Entscheidungs- und Rollenspiel, das durch einfache Mechaniken und eine spannende Geschichte überzeugt. 
 Spielende übernehmen die Rolle eines Pirat*innenkapitäns auf der Suche nach einem legendären Schatz.
+
 Technisches Grundgerüst:
 Entscheidungen werden durch Auswahlmöglichkeiten getroffen.
 Zufällige Ereignisse, wie Kämpfe oder Rätsel, beeinflussen den Spielverlauf.
 Ein Inventarsystem und Marktplatz ermöglicht es, Gegenstände zu sammeln und zu kaufen. Diese verbessern die Kampfwerte des Spielers.
+
 Gameplay:
 Die Spielwelt bietet Herausforderungen wie Rätsel, Kämpfe und das Verwalten von Ressourcen.
 Der Ausgang der Geschichte hängt von den Entscheidungen der Spielenden ab. Das Hauptziel ist es genug Gold zu sammeln und das Schiff zu kaufen.
