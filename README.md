@@ -1,5 +1,5 @@
 # adventure_games
-Textbasierte Abenteuer Spiele
+Piratenspiel oder Elfenspiel – erlebe fesselnde Geschichten und spannende Herausforderungen in diesen textbasierten Rollenspielen! 🏴‍☠️✨
 
 # Piratenspiel - Melanie Radosevic & Dominik Artner
 Piraten-Abenteuer (Artner & Radosevic)
