@@ -25,6 +25,7 @@ Das Hauptziel ist es genug Gold zu sammeln, um das Piratenschiff zu kaufen.
 - Es können visuelle Effekte und grafische Elemente eingebaut werden, um das Spielerlebnis aufzuwerten. (pygame, colorama oder pyfiglet.)  
 - Nach erspielen des Schiffs, könnte die Reise weitergehen und weitere Level erkundet werden.
 
+</br></br>
 
 # Elfenspiel - Rayen Ezzine & Dorentina Krasniqi
 Ein textbasiertes Rollenspiel, das sich auf eine tiefgehende Quest-Struktur konzentriert. 
