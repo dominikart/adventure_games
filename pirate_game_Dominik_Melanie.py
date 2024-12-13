@@ -765,7 +765,7 @@ def temple_path():
 
     # Zufällige Auswahl eines Szenarios mit festgelegten Wahrscheinlichkeiten
     encounter = random.choices(["Tempelwächter", "Rätsel", "Goldfund", "Friedhof", "Eingesperrt"], 
-                               weights=[15, 15, 20, 35, 15 ], k=1)[0]
+                               weights=[15, 15, 20, 35, 15], k=1)[0]
 
     if encounter == "Tempelwächter":
         # Szenario: Spieler begegnet einem Tempelwächter
@@ -876,58 +876,66 @@ def temple_path():
         time.sleep(2)
         print(gitter)
         time.sleep(3)
-        if player["gold"] >= 200:
-            while True:
-                print_slow_bold("Eine Stimme hallt: 'Bezahle 💰 200 Goldmünzen, um deine Freiheit zu erkaufen!'\n")
-                print_slow("1. Bezahlen und freikommen")
-                print_slow("2. Verweigern und eingesperrt bleiben")
-                print_slow("3. Fliehen (50% Erfolgsquote)")
+        while True:
+            print_slow_bold("Eine Stimme hallt: 'Bezahle 💰 200 Goldmünzen, um deine Freiheit zu erkaufen!'")
+            print_slow_bold(f"Dein Goldbestand: 💰 {player['gold']}\n")
+            print_slow("1. Bezahlen und freikommen")
+            print_slow("2. Verweigern und eingesperrt bleiben")
+            print_slow("3. Fliehen (50% Erfolgsquote)")
 
-                # Spieler trifft seine Wahl
-                choice = input("\nWas tust du? (1/2/3): ")
-                print(abtrennung)
+            # Spieler trifft seine Wahl
+            choice = input("\nWas tust du? (1/2/3): ")
+            print(abtrennung)
 
-                if choice == "1":
+            if choice == "1":
+                if player["gold"] >= 200:
                     player["gold"] -= 200  # Zieht 200 Münzen vom Goldbestand des Spielers ab
                     print_slow_bold("\nDu bezahlst 💰 200 Gold und das Gitter hebt sich langsam. Du bist frei!")
                     time.sleep(3)
-                    break  # Beendet die Schleife, da der Spieler frei ist
+                    adventure_map()
+                elif player["gold"] < 200:
+                    player_broke()
 
-                elif choice == "2":
-                    print_slow_bold("\nDu verweigerst die Zahlung und bleibst eingesperrt. Vielleicht schaffst du es zu fliehen...\n")
-                    continue
+            elif choice == "2":
+                print_slow_bold("\nDu verweigerst die Zahlung und bleibst eingesperrt. Vielleicht schaffst du es zu fliehen...\n")
+                continue
 
-                elif choice == "3":
-                    # 50% Chance auf Erfolg
-                    if random.random() < 0.5:
-                        print_slow("\nDu fliehst erfolgreich und entkommst aus dem Tempel!")
-                        break  # Spieler ist frei, Schleife endet hier
-                    else:
-                        print_slow_bold("\nDein Fluchtversuch scheitert...")
-                        time.sleep(2)
-                        print_slow("\nPlötzlich verdunkelt sich der Raum und ein tiefer, grollender Donner ertönt.")
-                        time.sleep(2)
-                        print_slow("\nEine mächtige Stimme hallt wider: 'Du wagst es, den Willen der Götter zu hintergehen?'")
-                        time.sleep(2)
-                        print_slow("\nDie Stimme verkündet: 'Für deinen unehrlichen Versuch wird dir das Kostbarste genommen: dein Leben.'")
-                        time.sleep(2)
-                        print_slow("\nDu fühlst, wie deine Lebensenergie schwindet und mit einem letzten Atemzug geht deine Reise hier zu Ende.")
-                        time.sleep(2)
-                        play_music("lose.mp3")
-                        print(rip_ascii)
-                        print_slow_bold("GAME OVER. Die Götter haben dich bestraft.")
-                        print(abtrennung)
-                        print()
-                        time.sleep(2)
-                        print(lose_ascii)
-                        time.sleep(4)
-                        game_neustart()
+            elif choice == "3":
+                # 50% Chance auf Erfolg
+                if random.random() < 0.5:
+                    print_slow("\nDu fliehst erfolgreich und entkommst aus dem Tempel!")
+                    break  # Spieler ist frei, Schleife endet hier
                 else:
-                    print_slow("\nArrr, das war keine gültige Wahl! Bitte wähle 1, 2 oder 3 Landratte!\n") 
+                    print_slow_bold("\nDein Fluchtversuch scheitert...")
+                    time.sleep(2)
+                    print_slow("\nPlötzlich verdunkelt sich der Raum und ein tiefer, grollender Donner ertönt.")
+                    time.sleep(2)
+                    print_slow("\nEine mächtige Stimme hallt wider: 'Du wagst es, den Willen der Götter zu hintergehen?'")
+                    time.sleep(2)
+                    print_slow("\nDie Stimme verkündet: 'Für deinen unehrlichen Versuch wird dir das Kostbarste genommen: dein Leben.'")
+                    time.sleep(2)
+                    print_slow("\nDu fühlst, wie deine Lebensenergie schwindet und mit einem letzten Atemzug geht deine Reise hier zu Ende.")
+                    time.sleep(2)
+                    play_music("lose.mp3")
+                    print(rip_ascii)
+                    print_slow_bold("GAME OVER. Die Götter haben dich bestraft.")
+                    print(abtrennung)
+                    print()
+                    time.sleep(2)
+                    print(lose_ascii)
+                    time.sleep(4)
+                    game_neustart()
+            else:
+                print_slow("\nArrr, das war keine gültige Wahl! Bitte wähle 1, 2 oder 3 Landratte!\n") 
             
-        else:
+
+
+
+    adventure_map()  # Führt den Spieler zurück zur Abenteuerkarte
+    
+def player_broke():
             # Spieler hat nicht genug Gold
-            print_slow_bold("Eine Stimme hallt: 'Bezahle 💰 200 Goldmünzen, um deine Freiheit zu erkaufen!'\n")
+            print_slow_bold("Eine Stimme hallt erneut: 'Bezahle 💰 200 Goldmünzen, um deine Freiheit zu erkaufen!'\n")
             time.sleep(2)
             print_slow("\nDu suchst verzweifelt in deinen Taschen nach Münzen, doch es ist nicht genug...")
             time.sleep(2)
@@ -950,8 +958,6 @@ def temple_path():
             print(lose_ascii)
             time.sleep(5)
             game_neustart()  # Startet das Spiel neu
-
-    adventure_map()  # Führt den Spieler zurück zur Abenteuerkarte
 
 ###########################################################################################################
 # Kampfsystem
