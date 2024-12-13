@@ -47,6 +47,11 @@ Klassenspezifische Quests und dynamische Kämpfe sorgen für Abwechslung.
 - Entscheidungsbasierte Enden:
 Unterschiedliche Enden basieren auf den getroffenen Entscheidungen und dem Erfolg in den Aufgaben.
 
+## Tipps für ein optimales Spielerlebnis
+- Stelle sicher, dass du über eine gut sichtbare Konsole verfügst, um die ASCII-Art und farbigen Texte optimal zu sehen.
+- Plane deine Ausrüstung und Entscheidungen strategisch, da sie den Verlauf der Kämpfe und Rätsel beeinflussen.
+- Du kannst das Spiel jederzeit mit dem Befehl "quit" beenden, um deinen Fortschritt zu sichern.
+
 ## Erweiterbarkeit
 - Magiesystem:
 Ein erweiterbares System mit verschiedenen Fähigkeiten könnte integriert werden.
